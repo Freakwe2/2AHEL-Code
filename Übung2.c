@@ -1,19 +1,58 @@
-#include <stdio.h>
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h>  
 
-int main(int argc, char* argv[])
-{
+int main(void)
+{     
+    
+    srand(time(NULL));
 
-    int Volljaerig = 18;
-    int alter;
-    printf("Gib dein alter ein: ");
-    scanf("%d" ,&alter);
-    if (alter < Volljaerig)
+    int min = 1;
+    int max = 100;
+
+
+
+    int zahl = (rand() % (max - min + 1)) + min; 
+    float Deine_Eingabe;
+    int Versuche = 1;
+    
+    printf("Rate die Zahl von 0 bis 100\n");
+    printf("Wie viele Versuche willst du haben?\nDu hast maximal 10 Versuche ");
+    scanf("%d",&Versuche);
+    if("Versuche > 10")
     {
-        printf("Du bist nicht alt genug\n");
+        Versuche = 10;
     }
-    if(alter > Volljaerig)
+    printf("Ok du hast %d Versuche!\n",Versuche);
+
+    for(int e = 0;e < Versuche;e++)
+
     {
-        printf("Du bist alt genug\n");
+        scanf("%f",&Deine_Eingabe);
+
+        if(Deine_Eingabe > zahl)
+        {
+            printf("Deine Eingabe war groesser als die gewuenschte Zahl :(\n ");
+        }
+        else if(Deine_Eingabe < zahl)
+        {
+            printf("Deine Eingabe war kleiner als die gewuenschte Zahl :(\n ");
+        }
+        else if(Deine_Eingabe == zahl)
+        {
+            printf("Du hast richtig geraten :) ");
+            break;
+        }
+        if("Deine_Eingabe == -1")
+        {
+            printf("Die Zahl ist: %d\n",zahl);
+        }
     }
-    return 0;
-} 
+    if("Versuche == 0")
+    {
+        printf("\nDu hast keine Versuche mehr");
+    }
+
+    
+    return 0; 
+}

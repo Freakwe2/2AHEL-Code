@@ -2,13 +2,23 @@
 
 int main()
 {
-    const char secret = 'X';
-    const char guess = 'Y';
-    if guess == secret{
+    const char secret[] = "REDBULL";
+    char guess;
+
+    printf("Rate den Buchstaben: ");
+    if (scanf(" %c", &guess) != 1){
+        printf("Ungueltige Eingabe\n");
+        return 1;
+    }
+    
+    if (secret == guess)
+    {
         printf("Richtig\n");
     }
-    else{
-        printf("Falsch %c", secret)
+    else
+    {
+        printf("Falsch %c", secret);
     }
-        return 0;
+    
+    return 0;
 }

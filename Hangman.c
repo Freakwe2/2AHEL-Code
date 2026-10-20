@@ -11,14 +11,13 @@ int main()
         return 1;
     }
     
-    if (secret == guess)
-    {
-        printf("Richtig\n");
+    int hits = 0;
+    for (int i = 0; i < (sizeof(secret) / sizeof(char)) - 1; i++) {
+        if((secret[i]) == guess) {
+            hits++;
+        }
     }
-    else
-    {
-        printf("Falsch %c", secret);
-    }
-    
+    printf("Treffer: %d", hits);
+
     return 0;
 }

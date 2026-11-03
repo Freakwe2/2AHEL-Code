@@ -1,11 +1,21 @@
 #include <stdio.h>
 
+int countHits(const char secret [], const char guess) {
+    int hits = 0;
+    for (int i = 0; i < sizeof(secret) -1; i++) {
+        if ((secret[i]) == guess) {
+            hits++;
+        }
+    }
+    return hits; 
+}
+
 int main()
 {
     const char secret[] = "REDBULL";
-    char guess;
     const int len = sizeof(secret) - 1;
     char guessed[len];
+    const char guess;
     int hits = 0;
     printf("Das Wort hat %d Buchstaben\n", len);
     for (int i = 0; i < len; i++) {

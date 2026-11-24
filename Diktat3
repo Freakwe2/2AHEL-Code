@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int strlen(char *wort){
+    int sz;
+    for (; wort[sz] != '\0'; sz++)
+        ;
+    return sz;
+}
+
+void dump(char *wort){
+    char *wort = malloc(sz + 1);
+    for(int i = 0; wort[i] != '\0'; i++){
+        wort[i] = c;
+    }
+    wort[sz] = '\0';
+    return wort
+}
+
+init(int sz, char c){
+    for(int i = 0; i < sz; i++){
+        printf("%c ", c);
+    }
+}
+
+int main(int argc, char *argv){
+    char *wort = "Wort";
+    const int n = strlen(wort);
+    char *wort2 = init(n, '_');
+
+    for(int i = 0; i < n; i++){
+        wort2[i] = '_';
+    }
+    
+    dump(wort2);
+    free(wort2);
+
+    return 0;
+}
